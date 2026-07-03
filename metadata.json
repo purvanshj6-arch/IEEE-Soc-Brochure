@@ -1,0 +1,8 @@
+{
+  "name": "IEEE Summer of Code 2026",
+  "description": "An interactive digital platform for the IEEE Summer of Code 2026 at Graphic Era Hill University. Features 12 cinematic presentation slides, track details, chronological timeline, mentor guide, resource bank, project registration portal, and an integrated AI Oracle Mentor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

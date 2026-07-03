@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Hanken Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-gold-glow: #ffe16d;
+  --color-neon-gold: #ffd700;
+  --color-marble: #e5e2e3;
+  --color-stone-navy: #111827;
+  --color-obsidian: #131314;
+}
+
+/* Custom design utilities */
+@layer utilities {
+  .text-glow-gold {
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.2);
+  }
+  
+  .border-glow-gold {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.25), inset 0 0 10px rgba(255, 215, 0, 0.1);
+  }
+
+  .border-glow-gold-active {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), inset 0 0 8px rgba(255, 215, 0, 0.3);
+  }
+
+  .chiseled-inset {
+    box-shadow: inset 0 1px 0 0 rgba(229, 226, 227, 0.15), inset 1px 0 0 0 rgba(229, 226, 227, 0.08);
+  }
+
+  .chamfer-clip {
+    clip-path: polygon(8px 0%, calc(100% - 8px) 0%, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px), 0% 8px);
+  }
+
+  .chamfer-clip-sm {
+    clip-path: polygon(4px 0%, calc(100% - 4px) 0%, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0% calc(100% - 4px), 0% 4px);
+  }
+}
+
+/* Custom scrollbar for deep obsidian panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0e0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2b;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffd700;
+}
+
+/* Meander pattern backgrounds */
+.meander-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M0 1h14v14H4v-4h6V5H6v2h2v1H4V3h10v10H2V1h-2v14h16V0H0z' fill='%23ffd700' fill-opacity='0.15'/%3E%3C/svg%3E");
+}
+
+/* Custom bloom keyframes */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.2));
+  }
+  50% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+  }
+}
+
+.glowing-meander {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
+
